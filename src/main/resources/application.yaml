@@ -10,9 +10,13 @@ spring:
     driverClassName: org.h2.Driver
     username: sa
     password:
+  sql:
+    init:
+      mode: always # Заставляет Spring всегда выполнять data.sql при старте
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
     show-sql: true
-
+    defer-datasource-initialization: true # Добавьте строго эту строку с отступом в 4 пробела
+debug: true

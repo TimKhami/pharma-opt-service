@@ -2,7 +2,6 @@ package com.example.pharmaoptservice.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 
 @Entity // Обязательно: говорим Спрингу, что это таблица
