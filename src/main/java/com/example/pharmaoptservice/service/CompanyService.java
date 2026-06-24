@@ -13,7 +13,10 @@ public class CompanyService {
         this.companyRepository = companyRepository;
     }
 
-//    public boolean authenticate(String login, String password) {
-//        return ;
-//    }
+    public boolean authenticate(String login, String password) {
+        return companyRepository.findByLogin(login)
+                .map(company -> company.getPasswordHash().equals(password))
+                .orElse(false);
+    }
+
 }
