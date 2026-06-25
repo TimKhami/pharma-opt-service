@@ -4,16 +4,17 @@ import com.example.pharmaoptservice.dto.LoginRequest;
 import com.example.pharmaoptservice.service.CompanyService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/api/v1/auth")
 public class CompanyController {
 
     private final CompanyService companyService;
 
-    // Внедрение зависимости через конструктор (Spring Boot 4 рекомендует именно этот способ)
     public CompanyController(CompanyService companyService) {
         this.companyService = companyService;
     }
